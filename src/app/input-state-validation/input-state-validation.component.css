@@ -1,0 +1,30 @@
+dl{
+    width: 400px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+/* this is manually creating for css effects */
+/* .validstyle{
+    border: 2px solid green;
+    box-shadow: 1px 2px 3px 3px green;
+}
+.invalidstyle{
+    border: 2px solid red;
+    box-shadow: 1px 2px 3px 3px red;
+} */
+/* this is angular provides pre define functions like ng.vallid,ng-invalid */
+input.ng-invalid{
+    border: 1px solid red;
+    box-shadow: 1px 1px 2px 2px red;
+}
+input.ng-valid{
+    border: 1px solid green;
+    box-shadow: 1px 1px 2px 2px green;
+}
+form.ng-invalid{
+    background-color: indianred;
+}
+form.ng-valid{
+    background-color: lawngreen;
+}

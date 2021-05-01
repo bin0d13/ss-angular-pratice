@@ -1,0 +1,56 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <h2>Register</h2>
+            <form [formGroup]="frmRegister">
+                <fieldset>
+                    <legend>Details</legend>
+                        <dl>
+                            <dt>Name</dt>
+                            <dd class="form-group">
+                                <input formControlName="name" class="form-control" type="text">
+                            </dd>
+                            <dt>price</dt>
+                            <dd class="form-group">
+                                <input formControlName="price" class="form-control" type="text">
+                            </dd>
+                        </dl>
+                </fieldset>
+                <fieldset>
+                    <legend>Stock details</legend>
+                    <div formGroupName='frmDetails'>
+                        <dl>
+                            <dt>City</dt>
+                            <dd class="form-group">
+                                <select formControlName='city' class="form-control">
+                                    <option>Delhi</option>
+                                    <option>Hyd</option>
+                                </select>
+                            </dd>
+                            <dt>Stock</dt>
+                            <dd>
+                                <input formControlName='stock' type="checkbox">
+                            </dd>
+                        </dl>
+                    </div>
+                </fieldset>
+                <button (click)="updateParttial()" class="btn btn-primary btn-block" >Update</button>
+            </form>
+
+        </div>
+        <div class="col-9">
+            <div>
+                <dl>
+                    <dt>Name</dt>
+                    <dd>{{frmRegister.value.name}}</dd>
+                    <dt>Price</dt>
+                    <dd>{{frmRegister.value.price}}</dd>
+                    <dt>Shipped To</dt>
+                    <dd>{{frmRegister.value.frmDetails.city}}</dd>
+                    <dt>Stock</dt>
+                    <dd>{{(frmRegister.value.frmDetails.stock)== true? 'available': 'out of stock'}}</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>

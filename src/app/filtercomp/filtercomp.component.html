@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="form-group">
+        <h2>choose category</h2>
+        <input type="radio" [(ngModel)]="selecteditems" value="all" name="filter">All
+        <input type="radio" [(ngModel)]="selecteditems" value="electronics" name="filter">electronics
+        <input type="radio" [(ngModel)]="selecteditems" value="fashion" name="filter">fashion
+        <input type="radio" [(ngModel)]="selecteditems" value="footware" name="filter">footwear
+    </div>
+    <div class="form-group">
+        <h2>product item</h2>
+        <select class="form-control" [(ngModel)]="selecteditems">
+            <option>all</option>
+            <option>electronics</option>
+            <option>fashion</option>
+            <option>footware</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>price</th>
+                    <th>category</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr [class.odd]="odd" [class.even]="even" *ngFor="let product of products; let odd=odd; let even=even">
+                    <ng-container  *ngIf="selecteditems == 'all' || selecteditems == product.categories">
+                        <td>{{product.name}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.categories}}</td>
+                    </ng-container>
+              
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

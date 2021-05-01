@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="box">
+        <h2>Register Product</h2>
+        <dl>
+            <dt>product name</dt>
+            <dd><input type="text" [(ngModel)]="name"></dd>
+            <dt>product price</dt>
+            <dd><input type="text" [(ngModel)]="price" class="form-control"> </dd>
+            <dt>shipped To</dt>
+            <dd>
+                <select [(ngModel)]="shipedTo">
+                    <option value="delhi">Delhi</option>
+                    <option value="hyd">hyd</option>
+                    <option value="odisha">odish</option>
+                </select>
+            </dd>
+            <dt>is in stock</dt>
+            <dd><input type="checkbox" [(ngModel)]="isinstock">yes</dd>
+        </dl>
+    </div>
+    <div class="box">
+        <h2>product Details</h2>
+        <table border="1px solid black" width="300px">
+            <tr>
+                <td>name</td>
+                <td>{{name}}</td>
+            </tr>
+            <tr>
+                <td>price</td>
+                <td>{{price}}</td>
+            </tr>
+            <tr>
+                <td>shipped</td>
+                <td>{{shipedTo}}</td>
+            </tr>
+            <tr>
+                <td>is stock</td>
+                <td>{{(isinstock == true)? "available":"out of stock"}}</td>
+            </tr>
+
+        </table>
+    </div>
+</div>

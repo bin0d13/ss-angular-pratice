@@ -1,0 +1,28 @@
+<div>
+    <div class="row">
+        <div class="col-6">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>price</th>
+                        <th>View Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let items of catProdu'>
+                        <td>{{items.proName}}</td>
+                        <td>{{items.proPrice}}</td>
+                        <td><button class="btn btn-link">Details</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <a routerLink='/detailCat'>Back to Categories</a>
+            </div>
+        </div>
+        <div col-6>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

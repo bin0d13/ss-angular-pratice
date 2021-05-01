@@ -1,0 +1,12 @@
+.container > div{
+    border: 1px solid brown;
+    box-shadow: 2px 2px 4px 4px brown;
+    width: auto;
+    padding: 10px;
+    margin-left: 20px;
+    border-radius: 10px;
+    
+}
+.container{
+    display: flex;
+}

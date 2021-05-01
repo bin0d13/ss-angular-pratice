@@ -1,0 +1,15 @@
+.effects{
+    background-color: cornflowerblue;
+    color: crimson;
+    text-align: center;
+}
+.backeffect{
+    background-color: cyan;
+}
+.textEffect{
+    color: white;
+    text-align: center;
+}
+.bordereffect{
+    border: 2px dotted black;
+}

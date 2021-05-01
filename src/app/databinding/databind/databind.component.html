@@ -1,0 +1,31 @@
+<div>
+    <!--two way binding -->
+    <input type="text" [value]="uname">
+    uname is {{uname}}
+    <button [(ngModel)]="uname">change value</button>
+    <br>
+    product name:<input type="text" value="details">
+
+<span>name is:{{details}}</span>
+<br>
+    user name:<input type="text" [value]="usernam">
+    <br>
+    <h2 [innerHTML]="usernam"></h2>
+    <table border="1px solid black" >
+        <th [attr.colspan]="mergecount">user details</th>
+        <tr>
+            <td>name</td>
+            <td>lastname</td>
+        </tr>
+    </table>
+    <dl>
+       <dt>product name</dt>
+       <dd>{{product.p_name}}</dd>
+       <dt>product price</dt>
+       <dd>{{product.p_price}}</dd>
+       <dt>is in stock</dt>
+       <dd>{{(product.p_stock==true)?"available":"out of stock"}}</dd>
+       <dt>photo</dt>
+       <dd><img src="{{product.p_photo}}" height="100px" width="100px"></dd>
+   </dl>
+</div>

@@ -1,0 +1,61 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <h2>Register products</h2>
+            <form [formGroup]="frmRegister">
+                <fieldset>
+                    <legend>Basic info</legend>
+                    <dl>
+                        <dt>name</dt>
+                        <dd class="form-group">
+                            <input formControlName='name' type="text" class="form-control">
+                        </dd>
+                        <dt>price</dt>
+                        <dd class="form-group">
+                            <input formControlName='price' type="text" class="form-control">
+                        </dd>
+                    </dl>
+                </fieldset>
+                <fieldset>
+                    <legend>stock Details</legend>
+                    <div formGroupName='frmDetails' class="form-group">
+                        <dl>
+                            <dt>shipped To</dt>
+                            <dd>
+                                <select formControlName='ship' class="form-control">
+                                    <option>Delhi</option>
+                                    <option>Hyd</option>
+                                </select>
+                            </dd>                    
+                            <dt>stock</dt>
+                            <dd>
+                                <input formControlName='stock' type="checkbox">
+                            </dd>
+                        </dl>
+                    </div>  
+                    <!-- this is array control handle -->
+                    <div>
+                        <h2>Upload photo<button (click)="addPhoto()" class="btn btn-link">Browse here</button></h2>
+                        <div *ngFor="let control of arrayControls.controls;let i=index" style="margin-top: 20px;">
+                            <input type="file">
+                            <button (click)="removePhoto(i)" class="btn btn-link">Remove</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-9">
+            <h2>collection Details</h2>
+            <div>
+                <dt>name</dt>
+                <dd>{{frmRegister.value.name}}</dd>
+                <dt>price</dt>
+                <dd>{{frmRegister.value.price}}</dd>
+                <dt>shipped to</dt>
+                <dd>{{frmRegister.value.frmDetails.ship}}</dd>
+                <dt>stock</dt>
+                <dd>{{(frmRegister.value.frmDetails.stock)==true ? 'available' : 'out of stock'}}</dd>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="panel">
+    <ul>
+        <li><input [(ngModel)]="selectedRadiochange" (change)="radioButtonChage()" value="all" name="filter" type="radio">All [{{allCount}}]</li>
+        <li><input [(ngModel)]="selectedRadiochange" (change)="radioButtonChage()" value="electronics" name="filter" type="radio"><span class="fa fa-tv"></span>electronics[{{electronicsCount}}]</li>
+        <li><input [(ngModel)]="selectedRadiochange" (change)="radioButtonChage()" value="footwear" name="filter" type="radio"><span class="fa fa-shoe-prints"></span>footwear [{{footwearCount}}]</li>
+    </ul>
+</div>

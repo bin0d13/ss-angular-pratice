@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>if demo</h2>
+    <div class="form-group">
+        <input type="checkbox" [(ngModel)]="checked">show product
+    </div>
+    <!-- <div class="form-group" *ngIf="checked"> -->
+    <ng-template class="form-group" [ngIf]="checked">
+        <img src="../../../assets/1mg.jpg" height="200px" width="200px">
+
+    </ng-template>
+    <div class="form-group" *ngIf="true; then thenBlock else elseBlock">
+     <!-- if you use div in there it will showing error like this  ..Error occurs in the template of component IfdemoComponent. -->
+     <!-- better to use ng-template -->
+        
+    </div>
+    <ng-template #thenBlock>if u give true it will showing</ng-template>
+        <ng-template #elseBlock>if u give false it will showing</ng-template>
+     <!-- this is example of ngSwitch -->
+     <div class="form-group">
+         <div [ngSwitch]="'two'">
+             <div *ngSwitchCase="'one'">one</div>
+             <div *ngSwitchCase="'two'">two</div>
+             <div *ngSwitchDefault>some other</div>
+         </div>
+     </div>
+
+
+</div>

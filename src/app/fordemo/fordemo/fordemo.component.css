@@ -1,0 +1,11 @@
+.container > div {
+    border:2px solid darkcyan;
+    border-radius: 5px;
+    width: auto;
+    padding:20px;
+    font-size: 20px;
+    margin-left: 30px;
+}
+.container {
+    display:flex;
+}

@@ -1,0 +1,28 @@
+<div class="container">
+    <h1 [ngClass]="'effects'">simple text</h1>
+</div>
+<!-- this is using array reference -->
+<div class="container">
+    <h2 [ngClass]="['backeffect','textEffect','bordereffect']">this is refering array</h2>
+</div>
+<div class="container">
+    <h1 [ngClass]="{backeffect:true,textEffect:true,bordereffect:false}">this is object reference</h1>
+</div>
+<!-- click to effects are change -->
+<div class="container">
+    <ul class="list-unstyled">
+        <li><input [(ngModel)]="isBackground" type="checkbox">background</li>
+        <li><input [(ngModel)]="istext" type="checkbox">texteffect</li>
+        <li><input [(ngModel)]="isBorder" type="checkbox">bordereffect</li>
+    </ul>
+    <h1 [ngClass]="{backeffect:isBackground,textEffect:istext,bordereffect:isBorder}">this is click o change effects</h1>
+</div>
+
+<!-- using array -->
+<div class="container">
+    <div class="form-group">
+        <h2>effects</h2>
+    <input [(ngModel)]="effects" class="form-control" type="text" placeholder="ex: background , border, texteffect">
+    <h1 [ngClass]="effects">using multiple array</h1>
+</div>
+</div>

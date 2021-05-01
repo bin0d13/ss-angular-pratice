@@ -1,0 +1,91 @@
+<!-- <div class="container">
+    <h2>using ngfor </h2>
+ <ol>
+     <li *ngFor="let item of listItem"> {{item}}</li>
+ </ol>
+<h2>selects from dropdown</h2>
+<select class="form-control">
+    <option *ngFor="let item of listItem">{{item}}</option>
+</select>
+<h2>choose from category</h2>
+<ul class="list-unstyled">
+    <li *ngFor="let item2 of listItem">
+        <input type="checkbox">{{item2}}
+    </li>
+</ul> -->
+
+<!-- nested to access -->
+<h2 class="text-center">amazon shopping</h2>
+<!-- this is for ngFor member -->
+<div class="container">
+    <h2>iteration properties</h2>
+    <button (click)="additems()" class="btn btn-primary" >add items</button>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>price</th>
+                <th>index</th>
+                <th>first</th>
+                <th>last</th>
+                <th>even</th>
+                <th>odd</th>  
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of items; let i=index; let fir=first; let last=last;let even=even;let odd=odd; trackBy:oneadd">
+                <td >{{item.id}}</td>
+                <td >{{item.name}}</td>
+                <td>{{item.price}}</td>
+                <td>{{i}}</td>
+                <td>{{fir}}</td>
+                <td>{{last}}</td>
+                <td>{{even}}</td>
+                <td>{{odd}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+<!-- this is nested -->
+<div class="container">
+    
+    <div>
+        <ol>
+            <li *ngFor="let item of products">
+                <a>{{item.category}}</a>
+                <ol>
+                    <li *ngFor="let product of item.products">
+                        <a href="#">{{product}}</a>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+    <div>
+    <div *ngFor="let item of products">
+        <details>
+            <summary>{{item.category}}</summary>
+            <ul>
+                <li *ngFor="let product of item.products">
+                    <a href="#">{{product}}</a>
+                </li>
+            </ul>
+        </details>
+    </div>
+
+    </div>
+    <div>
+        <select class="form-control">
+            <optgroup *ngFor="let item of products" label="{{item.category}}">
+                <option *ngFor="let product of item.products">{{product}}</option>
+            </optgroup>
+        </select>
+    </div>
+</div>

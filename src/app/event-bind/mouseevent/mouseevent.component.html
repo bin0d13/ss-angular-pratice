@@ -1,0 +1,28 @@
+ <div class="customcontainer">
+    <marquee (mouseover)=stoping($event) (mouseout)=straing($event) scrollamount="10">
+      <img src="../../../assets/Mobile.jpg">
+      <img src="../../../assets/Dslrcamera.jpg">
+      <img src="../../../assets/Boat headphones.jpg">
+      <img src="../../../assets/Cupboard.jpg">
+    </marquee>
+</div>
+  <!-- dynamically adding img here  -->
+<div class="customcontainer">
+    <marquee (mouseover)="stoping($event)" (mouseout)="straing($event)" scrollamount="10">
+        <span *ngFor="let pic of pics">
+            <img src="{{pic}}">
+        </span>
+    </marquee>
+</div>
+
+<!-- this is mousemove -->
+<div (mousemove)="getPosition($event)" >
+    <div style="height:1000px">
+        <h2>
+            x : {{styles.left}}<br> 
+            y : {{styles.top}}
+        </h2>
+
+</div>
+<img [ngStyle]="styles" src="../../../assets/3mg.jpg" width="70" height="70">
+</div>

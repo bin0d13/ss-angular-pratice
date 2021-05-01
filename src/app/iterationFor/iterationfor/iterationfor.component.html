@@ -1,0 +1,51 @@
+<h2>iteration for index</h2>
+<div class="container">
+    <div>
+        <h2>regiser</h2>
+        <div>
+            <div class="form-group">
+                <label>name</label>
+                <div>
+                    <input type="text" class="form-control" [(ngModel)]="txtName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>price</label>
+                <div>
+                    <input type="text" class="form-control" [(ngModel)]=txtPrice>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>stock</label>
+                <div>
+                    <input type="checkbox" [(ngModel)]="inStock"> yes
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" (click)="addproduct()">add items</button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h2>details</h2>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>price</th>
+                    <th>stock</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products; let i=index">
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{(product.stock == true)?"available": "out of stock"}}</td>
+                    <td><button class="btn btn-danger" (click)="deletecount(i)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

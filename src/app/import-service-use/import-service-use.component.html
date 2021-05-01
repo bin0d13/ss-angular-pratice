@@ -1,0 +1,30 @@
+<div class="container">
+    <aside>
+        <h2>Filter product</h2>
+        <app-product-filter (filterValueChange)="categoryChanged($event)" [allCount]= "allCount" [electronicsCount]="electronicsCount" [footwearCount]="footwearCount"></app-product-filter>
+    </aside>
+    <article>
+        <!-- <img src="../../../assets/Diningtable.jpg" height="500px" width="500px"> -->
+        <h2>Product Details</h2>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>preview</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let product of data">
+                    <tr *ngIf=" categoryName == 'all' || categoryName == product.category">
+                        <td>{{product.name}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.category}}</td>
+                        <td><img src="{{product.Photo}}" height="50" width="50"></td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </article>
+</div>

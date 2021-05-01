@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -24,7 +27,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": []
           },
@@ -114,6 +118,122 @@
           "configurations": {
             "production": {
               "devServerTarget": "my-app:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "routee": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/routee",
+      "sourceRoot": "projects/routee/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/routee",
+            "index": "projects/routee/src/index.html",
+            "main": "projects/routee/src/main.ts",
+            "polyfills": "projects/routee/src/polyfills.ts",
+            "tsConfig": "projects/routee/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/routee/src/favicon.ico",
+              "projects/routee/src/assets"
+            ],
+            "styles": [
+              "projects/routee/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/routee/src/environments/environment.ts",
+                  "with": "projects/routee/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "routee:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "routee:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "routee:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/routee/src/test.ts",
+            "polyfills": "projects/routee/src/polyfills.ts",
+            "tsConfig": "projects/routee/tsconfig.spec.json",
+            "karmaConfig": "projects/routee/karma.conf.js",
+            "assets": [
+              "projects/routee/src/favicon.ico",
+              "projects/routee/src/assets"
+            ],
+            "styles": [
+              "projects/routee/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/routee/tsconfig.app.json",
+              "projects/routee/tsconfig.spec.json",
+              "projects/routee/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/routee/e2e/protractor.conf.js",
+            "devServerTarget": "routee:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "routee:serve:production"
             }
           }
         }

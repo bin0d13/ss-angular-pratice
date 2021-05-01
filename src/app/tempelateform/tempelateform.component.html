@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <h2>rregister products</h2>
+           <form #frmRegister="ngForm" (ngSubmit)="OnSubmit(frmRegister.value)">
+            <div class="form-group">
+                <label for="txtName" >name</label>
+                <div>
+                    <input ngModel #txtName="ngModel" name="txtName" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" >price</label>
+                <div>
+                    <input ngModel #txtprice="ngModel" name="txtPrice" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" >quantity</label>
+                <div>
+                    <input ngModel #txtQty="ngModel" name="txtQty" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" >shipped to</label>
+                <div>
+                    <select #lstShippedto="ngModel" ngModel name="lstShippedto" class="form-control">
+                        <option>delhi</option>
+                        <option>hyderbad</option>
+                        <option>mumbai</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label fro="optStock">is in stock</label>
+                <div>
+                    <input #optStock="ngModel" name="optStock" ngModel type="checkbox"> yes
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="form-control btn btn-primary">Register</button>
+            </div>
+           </form>
+        </div>
+        <div class="col-4">
+            <h2>product Object</h2>
+            <pre>{{frmRegister.value | json}}</pre>
+        </div>
+        <div class="col-5">
+            <h2>Product Details</h2>
+            <dl>
+                <dt>name</dt>
+                <dd>{{frmRegister.value.txtName}}</dd>
+                <dt>price</dt>
+                <dd>{{txtprice.value}}</dd>
+                <dt>qty</dt>
+                <dd>{{frmRegister.value.txtQty}}</dd>
+                <dt>total</dt>
+                <dd>{{txtQty.value * txtprice.value}}</dd>
+                <dt>stock status</dt>
+                <dd>{{(frmRegister.value.optStock)? 'available' : 'not available'}}</dd>
+                <dt>shipped status</dt>
+                <dd>{{frmRegister.value.lstShippedto}}</dd>
+            </dl>
+        </div>
+    </div>
+</div>

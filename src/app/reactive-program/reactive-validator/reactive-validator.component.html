@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <h2>Validator</h2>
+    <div>
+        <form [formGroup]='frmRegister' (ngSubmit)="onSubmit()">
+             <div class="form-group">
+                  <label>User Name</label>
+                  <div>
+                     <input formControlName="userName" type="text" class="form-control">
+                     <div *ngIf="submitted && frm.userName.errors" class="text-danger">
+                         <span *ngIf="frm.userName.errors.required">User Name Required</span>
+                         <span *ngIf="frm.userName.errors.minlength">User Name is to sort</span>
+                     </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <label>User Mobile</label>
+                    <div>
+                       <input formControlName="mobile" type="text" class="form-control">
+                       <div *ngIf="submitted && frm.mobile.errors" class="text-danger">
+                           <span *ngIf="frm.mobile.errors.required">User Mobile Required</span>
+                       </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>User Email</label>
+                    <div>
+                       <input formControlName="userEmail" type="text" class="form-control">
+                       <div *ngIf="submitted && frm.userEmail.errors" class="text-danger">
+                           <span *ngIf="frm.userEmail.errors.required">User email Required</span>
+                           <span *ngIf="frm.userEmail.errors.email">User email invalid</span>
+                       </div>
+                    </div>
+                  </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block">Register</button>
+                </div>
+        </form>
+    </div>
+</div>

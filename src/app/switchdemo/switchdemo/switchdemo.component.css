@@ -1,0 +1,9 @@
+a:link{
+    color: white;
+}
+a:active{
+    color: yellow;
+}
+a:visited{
+    color: white;
+}

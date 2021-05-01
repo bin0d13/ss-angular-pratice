@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="form-group">
+        <label>effects</label>
+        <div>
+            <dl>
+                <dt>Choose background color</dt>
+                <dd>
+                    <select class="form-control" [(ngModel)]="bgcolor">
+                        <option value="red">red</option>
+                        <option value="blue">blue</option>
+                        <option value="green">green</option>
+                    </select>
+                </dd>
+                <dt>choose text color</dt>
+                <dd>
+                    <select [(ngModel)]="forecolor">
+                        <option value="yellow">yellow</option>
+                        <option value="white">white</option>
+                        <option value="orange">orange</option>
+                    </select>
+                </dd>
+                <dt>select allignment</dt>
+                <dd>
+                    <input [(ngModel)]="align" type="radio" name="align"  value="right">right
+                    <input [(ngModel)]="align" type="radio" name="align" value="center">center
+                    <input [(ngModel)]="align" type="radio" name="align" value="left">left
+                </dd>
+            </dl>
+            <button (click)="applyHere()" class="btn btn-primary">apply</button>
+        </div>
+    </div>
+    <h2 [ngStyle]="styleobject">style attribute</h2>
+</div>

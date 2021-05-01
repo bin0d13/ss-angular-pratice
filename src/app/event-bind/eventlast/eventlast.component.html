@@ -1,0 +1,11 @@
+<div class="container">
+    <h2>user name</h2>
+    <div class="form-group">
+        <input (focus)="showing()" (blur)="onBlur()" [(ngModel)]="userName" (copy)="onCopy()" (cut)="onCut()" (paste)="onPaste()"  type="text" class="form-control">
+        <span *ngIf="showmsg">{{message}}</span>
+        </div>
+        <div class="form-group">
+            <img (dblclick)="doubleclick()" src="../../../assets/Boat headphones.jpg" height="50" width="50">
+            <p>double click to zoom in</p>
+        </div>
+</div>

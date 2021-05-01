@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <h2>login</h2>
+    <div class="form-group">
+        <label>User Name</label>
+        <div>
+            <input type="text" class="form-control">
+        </div>
+    </div>
+    <div class="form-group">
+        <label>password</label>
+        <div>
+            <input type="text" class="form-control">
+        </div>
+    </div> 
+    <div class="form-group">
+        <label>verify code</label>
+        <div>{{code}} <button (click)="refreshClick()" class="btn"><span class="fa fa-sync"></span></button>
+
+        </div>
+        <div>
+            <input type="text" class="form-control">
+            
+        </div>
+    </div>
+    <div class="form-group">
+        <em><button class="btn btn-primary form-control text-white">submit</button></em>
+    </div>
+</div>

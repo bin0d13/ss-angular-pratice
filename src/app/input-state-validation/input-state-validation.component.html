@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    
+    <form #frmRegister="ngForm">
+        <dl>
+            <h2>Register User</h2>
+            <dt>User name</dt>
+            <dd>
+                <!-- this is manually defininig css effects -->
+                <!-- <input [ngClass]="{validstyle:txtName.valid, invalidstyle:txtName.invalid}" type="text" class="form-control" ngModel name="txtName" #txtName="ngModel" required minlength="4"> -->
+                <!-- this is angular provide pre define function -->
+                <input type="text" class="form-control" ngModel name="txtName" #txtName="ngModel" required minlength="4">
+                <!-- this is for single condition -->
+                <!-- <span *ngIf="frmRegister.submitted && txtName.invalid || txtName.touched && txtName.invalid" class="text-danger">name required</span> -->
+               <!-- this is for muliple conditions then how to execute -->
+                <div *ngIf="txtName.touched && txtName.invalid" class="text-danger">
+                    <span *ngIf="txtName.errors.required">Name required</span>
+                    <span *ngIf="txtName.errors.minlength">Name is too short...</span>
+                </div>
+            </dd>
+            <dt>Mobile</dt>
+            <dd>
+                <input  type="text" name="txtMobile" ngModel #txtMobile="ngModel" class="form-control" required pattern="\+91[0-9]{10}">
+                <!-- <span *ngIf="frmRegister.submitted && txtMobile.invalid || txtMobile.touched && txtMobile.invalid" class="text-danger">Mobile Number required</span> -->
+                <div *ngIf="txtMobile.touched && txtMobile.invalid" class="text-danger">
+                    <span *ngIf="txtMobile.errors.required">Mobile Number Required</span>
+                    <span *ngIf="txtMobile.errors.pattern">invalid Mobile</span>
+                </div>
+            </dd>
+            <dt>select Gender</dt>
+            <dd (change)="genSelect(optGender.value)">
+                <input value="none" type="radio" name="optGender" ngModel #optGender="ngModel">None
+                <input value="male" type="radio" name="optGender" ngModel #optGender="ngModel">Male
+                <input value="female" type="radio" name="optGender" ngModel #optGender="ngModel">Female
+            </dd>
+            <span *ngIf="SelectGen" class="text-danger">select gender</span>
+            <dt>select City</dt>
+            <dd class="form-group">
+                <select (change)="citySelect(lstCities.value)" class="form-control" name="lstCities" ngModel #lstCities="ngModel">
+                    <option value="nocity">select city</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="hyderabad">Hyderabad</option>
+                </select>
+                <span *ngIf="SelectCity" class="text-danger">choose city</span>
+            </dd>
+            <dt>Write Even No</dt>
+            <dd class="form-group">
+                <input (blur)="selectEven(lstEvent.value)" class="form-control" type="text" ngModel name="lstEvent" #lstEvent="ngModel">
+                <span *ngIf="givenEven" class="text-danger">select even Number</span>
+            </dd>
+            <button class="btn btn-primary btn-block">Register</button>
+        </dl>
+        
+    </form>
+</div>

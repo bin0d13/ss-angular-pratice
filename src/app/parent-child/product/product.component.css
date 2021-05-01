@@ -1,0 +1,16 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin: 2em auto;
+}
+aside {
+    border-right:  2px dotted darkcyan;
+    background-color: lightgreen;
+    /* text-align: center; */
+ } 
+article{
+    padding: 20px;
+} 
+img{
+    border: 1px solid black;
+}

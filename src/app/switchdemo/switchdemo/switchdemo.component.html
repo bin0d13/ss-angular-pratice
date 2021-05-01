@@ -1,0 +1,37 @@
+<div class="container">
+    <h2>switch directive</h2>
+        <ul class="nav bg-primary text-white">
+            <li class="nav-item" >
+                <button value="details" (click)="changeView($event)" class="btn btn-primary">details</button>
+            </li>
+            <li class="nav-item" >
+                <button value="feature" (click)="changeView($event)" class="btn btn-primary">feature</button>
+            </li>
+            <li class="nav-item" >
+                <button value="preview" (click)="changeView($event)" class="btn btn-primary">preview</button>
+            </li>
+        </ul>
+  
+    <div class="form-group" [ngSwitch]="selectedList">
+        <div *ngSwitchCase="'details'">
+            <dl>
+                <dt>name</dt>
+                <dd>mobile</dd>
+                <dt>price</dt>
+                <dd>&#8377;15000.20</dd>
+                <dt>stock</dt>
+                <dd>out of stock</dd>
+            </dl>
+        </div>
+        <div *ngSwitchCase="'feature'">
+            <ol>
+                <li>feature-1</li>
+                <li>feature-2</li>
+                <li>feature-3</li>
+            </ol>
+        </div>
+        <div *ngSwitchCase="'preview'">
+            <img src="../../../assets/2img.jpg">
+        </div>
+    </div>
+</div>

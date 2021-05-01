@@ -1,0 +1,20 @@
+<div class="container">
+    <button (click)="clicked($event)" class="btn btn-primary btn-block" name="submit" value="clicked">submit</button>
+     <p>Button name:{{butonName}}</p>
+     <p>Xposition:{{positionValue}}</p>
+
+     <div class="form-group">
+         <div (click)="positionX($event)" class="row">
+           <div class="col form-control bg-warning">
+               red
+           </div> 
+           <div class="col form-control bg-success">
+               blue
+           </div>
+           <div class="col form-control bg-primary">
+               green
+           </div>
+         </div>
+         <div>position value: {{positionval}}</div>
+     </div>
+</div>

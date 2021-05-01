@@ -1,0 +1,32 @@
+.container-fluid{
+    width: 100%;
+}
+/* [class*= "col-"]{
+    box-shadow: 2px 3px 4px darkred ;
+    width: 90%;
+    height: 100%;
+} */
+.row{
+    height: 100%;
+}
+.section{
+    width: 90%;
+    margin: 20px;
+}
+.card{
+    width: 100%;
+}
+img:hover{
+    transform: scale(2);
+    transition: 2s;
+}
+img{
+    transition: 2s;
+}
+.card-body{
+    overflow: hidden;
+}
+.box{
+    float: left;
+    margin-left: 20px;
+}
